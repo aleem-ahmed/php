@@ -1,12 +1,13 @@
 <!-- Verify User Page -->
 <?php
+	// [REQUIRE] Personal //
 	include_once '../private/common/initialization.php';
+	include_once '../private/classes/user_class.php';
+
 
 	// If the user is already signed in set the title accordingly
-	if (isset($_SESSION['username'])) {
-		$page_title = 'You’re Already Verified';
-
-	} else {
+	if (isset($_SESSION['username'])) { $page_title = 'You’re Already Verified'; }
+	else {
 		$page_title = 'Welcome to RpTide';
 		
 		// Initialize the results
@@ -26,11 +27,8 @@
 			$server_results['status'] = 'error';
 			$server_results['control'] = 'form';
 			$server_results['message'] = 'Error: Invalid user.';
-		
-		} else {
-			// Include the User class
-			include_once '../private/classes/user_class.php';
-	
+		}
+		else {
 			// Create a new User object
 			$user = new User($mysqli);
 			
@@ -40,6 +38,7 @@
 	}
 ?>
 
+<!-- [HTML] -->
 <?php include_once 'common/top/top.php'; ?>
 
 <div class="f-island">
