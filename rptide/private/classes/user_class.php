@@ -27,9 +27,9 @@ class User {
 	 *==============*
 	 * User Methods *
 	 *==============*
-	 */
+	*/
 	
-	/* [CREATE USER] Adds a new user account to the database and sends the user a verification email */
+	// [CREATE USER] User and send Verification //
 	public function createUser() {
 		// Store default status
 		$server_results['status'] = 'success';
@@ -251,7 +251,7 @@ class User {
 		return $JSON_data;
 	}
 
-	/* [VERIFY USER] Verifies a new user account */
+	// [VERIFY] Verifies a new user account //
 	public function verifyUser() {
 		// Store the default status
 		$server_results['status'] = 'success';
@@ -353,7 +353,7 @@ class User {
 		return $JSON_data;
 	}
 
-	/* [SIGN IN USER] Signs a user into their account */
+	// [SIGN-IN] Signs a user into their account //
 	public function signInUser() {
 		// Store the default status
 		$server_results['status'] = 'success';
@@ -444,7 +444,7 @@ class User {
 		return $JSON_data;
 	}
 
-	/* [SEND PASSWORD RESET] Sends the user an email that includes a link to reset the account password */
+	// [SEND-PASSWORD-RESET] Send email //
 	public function sendPasswordReset() {
 		// Store the default status
 		$server_results['status'] = 'success';
@@ -539,7 +539,7 @@ class User {
 		return $JSON_data;
 	}
 
-	/* [RESET PASSWORD] Updates the User's Password */
+	// [RESET-PASSWORD] Updates the User's Password //
 	public function resetPassword() {
 		// Store the default status
 		$server_results['status'] = 'success';
@@ -650,7 +650,7 @@ class User {
 		return $JSON_data;
 	}
 
-	/* [DELETE USER] Removes a user's account from the database */
+	// [DELETE] User //
 	public function deleteUser() {
 		// Store the default status
 		$server_results['status'] = 'success';
